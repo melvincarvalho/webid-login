@@ -1,11 +1,11 @@
 {
-  "name": "WebID-Signup",
-  "version": "0.0.1",
-  "homepage": "https://github.com/linkeddata/signup",
+  "name": "webid-login",
+  "version": "0.0.2",
+  "homepage": "https://github.com/linkeddata/webid-login",
   "authors": [
     "Andrei Sambra <andrei@w3.org>"
   ],
-  "description": "Login/Signup widget for WebID accounts",
+  "description": "WebID login widget",
   "license": "MIT",
   "keywords": "webid, polymer, web-components",
   "private": false,
