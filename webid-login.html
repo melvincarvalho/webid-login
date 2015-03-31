@@ -1,82 +1,24 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
-<link rel="import" href="bower_components/font-roboto/roboto.html">
 <link rel="import" href="bower_components/core-ajax/core-ajax.html">
 <link rel="import" href="bower_components/paper-button/paper-button.html">
-<link rel="import" href="bower_components/core-overlay/core-overlay.html">
-<link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
-<link rel="import" href="bower_components/core-label/core-label.html">
-<link rel="import" href="bower_components/core-transition/core-transition.html">
 
 <polymer-element name="webid-login">
   <template>
     <style>
-    :host {
-      display: block;
-      position: relative;
-      background-color: white;
-      padding: 20px;
-      width: 100%;
-      font-size: 1.2rem;
-      font-weight: 300;
-    }
     core-icon-button {
       color: #3e50b4;
-    }
-    core-overlay {
-      background: #fff;
-      padding: 30px 42px;
-      margin: 0px 10px 0px 10px;
-      overflow: auto;
-    }
-    .login-header {
-      margin-bottom: 10px;
-    }
-    .greencolor {
-      color: #66BB6A;
     }
     paper-button.colored {
       background: #4285f4;
       color: #fff;
     }
-    #infoLink {
-      margin-top: 20px;
-    }
-    #infoLink a {
-      cursor: help;
-      text-decoration: underline;
-    }
     </style>
 
     <!-- Should use a list of login endpoints instead -->
-    <core-ajax id="ajaxLogin" url="https://rww.io/" on-core-response="{{ajaxLoginResponse}}" on-core-complete="{{ajaxLoginDone}}"></core-ajax>
+    <core-ajax id="ajaxLogin" url="https://rww.io/" on-core-response="{{ajaxLoginResponse}}"></core-ajax>
     <div horizontal center-justified layout>
       <paper-button id="loginButton" raised="" class="colored" role="button" tabindex="0" on-tap="{{doLogin}}" center>Authenticate with WebID</paper-button>
     </div>
-
-    <core-label id="infoLink" layout horizontal center-justified>
-      <a onclick="webidInfo()" alt="Tell me more about WebID."><small>What is a WebID?</small></a>
-    </core-label>
-    <!-- HELP OVERLAYS -->
-    <core-overlay id="webidinfo" backdrop="true">
-      <h2>What is a WebID?</h2>
-      <div>
-        <p>A WebID is a URL for you. It allows you to set up a public profile,
-        with friends, pictures and all kinds of things.</p>
-
-        <p>It works like having an account on a social networking site, but it
-        isn't restricted to just that site. It is very open because the information
-        can connect to other people, organizations and projects and so on, without
-        everyon having to join the same social networking site. All you need is
-        some place on the web where you can save a file to, and that is what storage
-        gives you. (<a href="http://www.w3.org/wiki/WebID" target="blank">More 
-        information</a>)</p>
-
-        <p>If you do not have a WebID yet, you can easily sign up for one by clicking 
-        the <strong>Signup</strong> button.</p>
-      </div>
-      <paper-button raised="" core-overlay-toggle aria-label="Close help overlay">Close</paper-button>
-    </core-overlay>
-
   </template>
   <script>
   Polymer({
@@ -137,10 +79,6 @@
       } else {
         return decodeURIComponent(results[1]);
       }
-    },
-    webidInfo: function() {
-      // var l = document.querySelector("webid-login");
-      this.$.webidinfo.toggle();
     }
   });
   </script>
