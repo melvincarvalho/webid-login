@@ -50,7 +50,7 @@ To listen to the event, one can add a very simple event listener in the document
 <html>
 <head>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/<version>/webcomponents.min.js"></script>
-	<link rel="import" href="webid-login.html">
+	<link rel="import" href="bower_components/webid-login/webid-login.html">
 </head>
 <body>
 	<webid-login></webid-login>
